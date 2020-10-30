@@ -9,3 +9,30 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
+## 1. Confidence intervals
+
+```{r}
+urchin_mass <- c(2.5, 4.7, 1.3, 4.2, 4.4, 1.2, 2.5, 6.9, 5.7, 5.2, 4.5)
+
+t.test(urchin_mass)
+```
+
+## T-test (1-sample t-test)
+
+See a claim: mean urchin mass is 5.5 grams
+
+```{r}
+urchin_test <- t.test(x = urchin_mass, mu = 5.5)
+urchin_test
+```
+
+## Two-sample t-test
+
+```{r}
+common_dolphin <- c(50, 45, 42, 38, 40, 60, 62, 57, 42, 35)
+bottlenose_dolhpin <- c(55, 62, 69, 70, 81, 75, 47, 65, 75, 73, 66)
+
+t.test(x = common_dolphin, y = bottlenose_dolhpin)
+```
+
+

@@ -379,7 +379,58 @@ summary {
 </div>
 
 
+<div id="confidence-intervals" class="section level2">
+<h2>1. Confidence intervals</h2>
+<pre class="r"><code>urchin_mass &lt;- c(2.5, 4.7, 1.3, 4.2, 4.4, 1.2, 2.5, 6.9, 5.7, 5.2, 4.5)
 
+t.test(urchin_mass)</code></pre>
+<pre><code>## 
+##  One Sample t-test
+## 
+## data:  urchin_mass
+## t = 7.1281, df = 10, p-value = 3.187e-05
+## alternative hypothesis: true mean is not equal to 0
+## 95 percent confidence interval:
+##  2.693417 5.142947
+## sample estimates:
+## mean of x 
+##  3.918182</code></pre>
+</div>
+<div id="t-test-1-sample-t-test" class="section level2">
+<h2>T-test (1-sample t-test)</h2>
+<p>See a claim: mean urchin mass is 5.5 grams</p>
+<pre class="r"><code>urchin_test &lt;- t.test(x = urchin_mass, mu = 5.5)
+urchin_test</code></pre>
+<pre><code>## 
+##  One Sample t-test
+## 
+## data:  urchin_mass
+## t = -2.8777, df = 10, p-value = 0.01645
+## alternative hypothesis: true mean is not equal to 5.5
+## 95 percent confidence interval:
+##  2.693417 5.142947
+## sample estimates:
+## mean of x 
+##  3.918182</code></pre>
+</div>
+<div id="two-sample-t-test" class="section level2">
+<h2>Two-sample t-test</h2>
+<pre class="r"><code>common_dolphin &lt;- c(50, 45, 42, 38, 40, 60, 62, 57, 42, 35)
+bottlenose_dolhpin &lt;- c(55, 62, 69, 70, 81, 75, 47, 65, 75, 73, 66)
+
+t.test(x = common_dolphin, y = bottlenose_dolhpin)</code></pre>
+<pre><code>## 
+##  Welch Two Sample t-test
+## 
+## data:  common_dolphin and bottlenose_dolhpin
+## t = -4.7329, df = 18.855, p-value = 0.0001476
+## alternative hypothesis: true difference in means is not equal to 0
+## 95 percent confidence interval:
+##  -28.83603 -11.14579
+## sample estimates:
+## mean of x mean of y 
+##  47.10000  67.09091</code></pre>
+</div>
 
 
 
